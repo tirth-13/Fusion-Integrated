@@ -1,6 +1,12 @@
 from rest_framework import viewsets
-from .serializers import ELMDataSerializer
+from rest_framework.response import Response
+from rest_framework import status
 
-class ELMDataViewSet(viewsets.ModelViewSet):
-    serializer_class = ELMDataSerializer
-    queryset = []  # This will be populated with actual data
+class ELMDataViewSet(viewsets.ViewSet):
+    def list(self, request):
+        metadata = {
+            "label": "elm",
+            "description": "ELM module metadata",
+            "version": "1.0.0"
+        }
+        return Response(metadata, status=status.HTTP_200_OK)
