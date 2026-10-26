@@ -1,6 +1,6 @@
-from rest_framework import viewsets
+from rest_framework import status, viewsets
 from rest_framework.response import Response
-from rest_framework import status
+
 
 class ELMDataViewSet(viewsets.ViewSet):
     def list(self, request):
